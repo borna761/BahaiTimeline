@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  startYear: 1
+  startMonth: 1
+  startDay: 1
+  startTime: 2016-02-09 13:04:19
+  endYear: 1
+  endMonth: 1
+  endDay: 1
+  endTime: 2016-02-09 13:04:19
+  displayDate: 2016-02-09
+  headline: MyString
+  text: MyText
+  media: MyString
+  mediaCredit: MyString
+  mediaCaption: MyString
+  mediaThumbnail: MyString
+  background: MyString
+  eventtype_id: 
+  eventgroup_id: 
+
+two:
+  startYear: 1
+  startMonth: 1
+  startDay: 1
+  startTime: 2016-02-09 13:04:19
+  endYear: 1
+  endMonth: 1
+  endDay: 1
+  endTime: 2016-02-09 13:04:19
+  displayDate: 2016-02-09
+  headline: MyString
+  text: MyText
+  media: MyString
+  mediaCredit: MyString
+  mediaCaption: MyString
+  mediaThumbnail: MyString
+  background: MyString
+  eventtype_id: 
+  eventgroup_id: 

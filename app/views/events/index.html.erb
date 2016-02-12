@@ -1,0 +1,42 @@
+<h1>Timeline of Events</h1>
+
+<table>
+  <thead>
+    <td>Start Date</td>
+    <td>End Date</td>
+    <td>Headline</td>
+    <td>Event Type</td>
+  </thead>
+  <tbody>
+<% @events.each do |event|
+
+  if (event.startDay.to_s == "")
+    if (event.startMonth.to_s == "")
+      eventStartDate = event.startYear.to_s
+    else
+      eventStartDate = Date::MONTHNAMES[event.startMonth] + " " + event.startYear.to_s
+    end
+  else
+    eventStartDate = Date::MONTHNAMES[event.startMonth] + " " + event.startDay.to_s + ", " + event.startYear.to_s
+  end
+
+  if (event.endDay.to_s == "")
+    if (event.endMonth.to_s == "")
+      eventEndDate = event.endYear.to_s
+    else
+      eventEndDate = Date::MONTHNAMES[event.endMonth] + " " + event.endYear.to_s
+    end
+  else
+    eventEndDate = Date::MONTHNAMES[event.endMonth] + " " + event.endDay.to_s + ", " + event.endYear.to_s
+  end
+
+  %>
+  <tr>
+    <td><%= eventStartDate %></td>
+    <td><%= eventEndDate %></td>
+    <td><%= event.headline %></td>
+    <td><%= event.eventgroup.group %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
