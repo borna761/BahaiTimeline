@@ -100,7 +100,7 @@
   }
 .tl-skinny h2{margin-top:0}
 @font-face{
-  font-family:tl-icons;src:url('<%=asset_path "tl-icons.eot"%>');src:url('<%=asset_path "tl-icons.eot?#iefix"%>') format('embedded-opentype'),url('<%=asset_path "tl-icons.ttf"%>') format('truetype'),url('icons/tl-icons.woff') format('woff'),url('tl-icons.svg#tl-icons') format('svg');font-weight:400;font-style:normal}
+  font-family:tl-icons;src:url(asset-path('tl-icons.eot'));src:url(asset-path('tl-icons.eot?#iefix')) format('embedded-opentype'),url(asset-path('tl-icons.ttf')) format('truetype'),url(asset-path('tl-icons.woff')) format('woff'),url(asset-path('tl-icons.svg#tl-icons')) format('svg');font-weight:400;font-style:normal}
   [class^=tl-icon-],[class*=" tl-icon-"]{font-family:tl-icons;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
   .tl-icon-vine:after{content:"\e64d"}
   .tl-icon-wikipedia:after{content:"\e64e"}
