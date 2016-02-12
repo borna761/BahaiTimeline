@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "events" => "events#index"
   get "timeline" => "timeline#index"
   get "presentation" => "presentation#index"
+  get "about" => "about#index"
 
   root "timeline#index"
 end
