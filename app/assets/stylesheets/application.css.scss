@@ -12,5 +12,7 @@
  *
  *= require_tree .
  *= require_self
- *= require font.opensans-gentiumbook
 */
+
+@import "timeline";
+@import "font.opensans-gentiumbook";
