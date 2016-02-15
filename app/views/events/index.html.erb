@@ -2,10 +2,13 @@
 
 <table>
   <thead>
-    <td>Start Date</td>
-    <td>End Date</td>
-    <td>Headline</td>
-    <td>Event Type</td>
+    <th>
+      <td>Start Date</td>
+      <td>End Date</td>
+      <td>Headline</td>
+      <td>Event Type</td>
+      <td>Edit</td>
+    </th>
   </thead>
   <tbody>
 <% @events.each do |event|
@@ -36,6 +39,8 @@
     <td><%= eventEndDate %></td>
     <td><%= event.headline %></td>
     <td><%= event.eventgroup.group %></td>
+    <td><%= event.eventtype.eventtype %></td>
+    <td><%= link_to("Edit", edit_event_path(event))%></td>
   </tr>
 <% end %>
 </tbody>
