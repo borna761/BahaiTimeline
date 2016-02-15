@@ -1,0 +1,51 @@
+<h1><%= @event.headline %></h1>
+
+<%= form_for(@event) do |f| %>
+<p>
+  <%= f.label :startYear %>
+  <%= f.text_field :startYear %>
+</p>
+<p>
+  <%= f.label :startMonth %>
+  <%= f.text_field :startMonth %>
+</p>
+<p>
+  <%= f.label :startDay %>
+  <%= f.text_field :startDay %>
+</p>
+<p>
+  <%= f.label :endYear %>
+  <%= f.text_field :endYear %>
+</p>
+<p>
+  <%= f.label :endMonth %>
+  <%= f.text_field :endMonth %>
+</p>
+<p>
+  <%= f.label :endDay %>
+  <%= f.text_field :endDay %>
+</p>
+<p>
+  <%= f.label :headline %><br/>
+  <%= f.text_field :headline, size: 50 %>
+</p>
+<p>
+  <%= f.label :text %><br/>
+  <%= f.text_area :text, cols: 60, rows: 7 %>
+</p>
+<p>
+  <%= f.label :media %><br/>
+  <%= f.text_field :media, size: 50 %>
+</p>
+<p>
+  <%= f.label :mediaCredit %><br/>
+  <%= f.text_field :mediaCredit, size: 50 %>
+</p>
+<p>
+  <%= f.label :mediaCaption %><br/>
+  <%= f.text_field :mediaCaption, size: 50 %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
