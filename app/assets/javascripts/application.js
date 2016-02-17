@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require timeline
+//= require ddtf
+//= require html-table-search
 //= require_tree .
