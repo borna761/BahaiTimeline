@@ -9,20 +9,49 @@
   @extend %nav-inline;
   @extend %site-width;
   height: 64px;
+  position: relative;
 
   ul {
     text-align: right;
+    margin-right: -($global-spacing * 2);
   }
 
   li {
-    padding: 0 ($global-spacing * 2);
+    padding: 0 $global-spacing;
 
-    &:last-child {
-      padding-right: 0;
+    &.logo {
+      margin-top: -($global-spacing * 3);
+      position: absolute;
+      top: 50%;
+      left: 0;
+
+      a {
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+        padding: 0;
+        border-radius: 100%;
+        background-color: $color-white;
+        box-shadow: 0 1px 2px 0 $color-brand-500;
+        transition: box-shadow $global-transition;
+
+        &:after {
+          display: none;
+        }
+
+        &:hover {
+          box-shadow: 0 1px 2px 0 rgba(0,0,0,0.4);
+        }
+      }
     }
 
-    &.is-current a {
-      color: $color-brand-100;
+    &.is-current {
+      a {
+        &:after {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
     }
   }
 
@@ -30,10 +59,27 @@
     font-size: 16px;
     line-height: 64px;
     color: $color-white;
-    transition: color $global-transition;
+    padding: 0 $global-spacing;
+    position: relative;
+
+    &:after {
+      content: '';
+      opacity: 0;
+      visibility: hidden;
+      height: 2px;
+      position: absolute;
+      right: $global-spacing;
+      bottom: ($global-spacing * 2);
+      left: $global-spacing;
+      background-color: $color-white;
+      transition: opacity $global-transition, visibility $global-transition;
+    }
 
     &:hover {
-      color: $color-brand-100;
+      &:after {
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
 }
