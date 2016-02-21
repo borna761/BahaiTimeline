@@ -1,0 +1,35 @@
+.site-header {
+  position: relative;
+  background-color: $color-brand-500;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+  z-index: 10;
+}
+
+.site-nav {
+  @extend %nav-inline;
+  @extend %site-width;
+  height: 64px;
+
+  ul {
+    text-align: right;
+  }
+
+  li {
+    padding: 0 16px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  a {
+    font-size: 16px;
+    line-height: 64px;
+    color: $color-white;
+    transition: color $global-transition;
+
+    &:hover {
+      color: $color-brand-100;
+    }
+  }
+}

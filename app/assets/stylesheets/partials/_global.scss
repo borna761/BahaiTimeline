@@ -1,0 +1,138 @@
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: $body-line-height;
+  color: $color-content;
+  height: 100%;
+  background: $body-bg;
+}
+
+html {
+  font-size: $body-font-size;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+::selection {
+  color: $color-white;
+  text-shadow: none;
+  background: $color-selection;
+}
+
+::-moz-selection {
+  color: $color-white;
+  text-shadow: none;
+  background: $color-selection;
+}
+
+::-webkit-selection {
+  color: $color-white;
+  text-shadow: none;
+  background: $color-selection;
+}
+
+::-webkit-input-placeholder {
+  font-weight: 300;
+  color: lighten($color-input, 70);
+}
+
+:-moz-placeholder {
+  opacity: 1;
+  font-weight: 300;
+  color: lighten($color-input, 70);
+}
+
+::-moz-placeholder {
+  opacity: 1;
+  font-weight: 300;
+  color: lighten($color-input, 70);
+}
+
+:-ms-input-placeholder {
+  font-weight: 300;
+  color: lighten($color-input, 70);
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+a:focus,
+button:focus {
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dt,
+dd,
+li,
+th,
+td,
+blockquote,
+button,
+figure,
+fieldset,
+legend,
+menu,
+strong {
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:active {
+  background-color: transparent;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+table {
+  table-layout: fixed;
+}
+
+fieldset {
+  border: 0;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.site-body {
+}
+
+.section-inner {
+  @extend %site-width;
+}

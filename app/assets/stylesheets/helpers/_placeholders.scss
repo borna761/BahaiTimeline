@@ -1,0 +1,105 @@
+%mobileOnly {
+  display: block;
+
+  @include breakpoint(small) {
+    display: none;
+  }
+}
+
+%desktopOnly {
+  display: none;
+
+  @include breakpoint(medium) {
+    display: block;
+  }
+}
+
+%centerBlock {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+%textTruncate {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+%full-width {
+  width: 100%;
+}
+
+%site-width {
+  @extend %centerBlock;
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  @include breakpoint(small) {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  @include breakpoint(medium) {
+    width: $site-width;
+  }
+}
+
+.outdatedBrowserMessage,
+.noJSMessage {
+  color: $color-white;
+  text-align: center;
+  padding: 0.2em 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: $color-black;
+}
+
+%clearfix:after {
+  content: ' ';
+  display: table;
+  clear: both;
+}
+
+%nav-inline {
+  font-size: 0;
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: block;
+  }
+}
+
+%flex-container-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: stretch;
+}
+
+%flex-item {
+  align-self: auto;
+  order: 0;
+}
+
+%flex-item-flex {
+  display: flex;
+}
+
+%flex-item-half {
+  @extend %flex-item;
+  flex: 0 1 49.3%;
+}
+
+%flex-item-full {
+  @extend %flex-item;
+  flex: 0 1 100%;
+}
