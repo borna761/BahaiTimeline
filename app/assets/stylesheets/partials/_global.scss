@@ -135,4 +135,6 @@ strong {
 
 .section-inner {
   @extend %site-width;
+  padding-top: ($global-spacing * 4);
+  padding-bottom: ($global-spacing * 4);
 }
