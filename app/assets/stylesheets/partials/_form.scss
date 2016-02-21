@@ -1,0 +1,20 @@
+.form-search {
+  padding-bottom: ($global-spacing * 5);
+}
+
+.form-label,
+.form-field {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.form-label {
+  font-size: 14px;
+  margin-right: $global-spacing;
+}
+
+.form-field {
+  font-size: 14px;
+  height: 36px;
+  padding: 0 $global-spacing;
+}
