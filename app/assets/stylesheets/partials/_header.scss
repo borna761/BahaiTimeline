@@ -15,10 +15,14 @@
   }
 
   li {
-    padding: 0 16px;
+    padding: 0 ($global-spacing * 2);
 
     &:last-child {
       padding-right: 0;
+    }
+
+    &.is-current a {
+      color: $color-brand-100;
     }
   }
 
