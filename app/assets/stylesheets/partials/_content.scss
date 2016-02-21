@@ -1,15 +1,45 @@
 .site-body {
   h1 {
-    padding-bottom: ($global-spacing * 4);
+    padding-bottom: ($global-spacing * 6);
+  }
+
+  h2 {
+    padding-top: $global-spacing;
+    padding-bottom: ($global-spacing * 2);
+  }
+
+  ul,
+  ol,
+  p,
+  blockquote {
+    padding-bottom: ($global-spacing * 3);
+  }
+
+  ul,
+  ol {
+    padding-left: ($global-spacing * 2);
+
+    ul {
+      padding-bottom: 0;
+    }
   }
 
   ul {
-    padding-bottom: ($global-spacing * 2);
-    padding-left: ($global-spacing * 2);
+    li {
+      list-style-type: disc;
+    }
+  }
+
+  ol {
+    li {
+      list-style-type: decimal;
+    }
   }
 
   p,
   li {
+    line-height: 24px;
+
     a {
       color: $color-brand-400;
       transition: color $global-transition;
@@ -20,12 +50,58 @@
     }
   }
 
-  li {
-    list-style-type: disc;
-    padding-bottom: $global-spacing;
+  blockquote {
+    p,
+    ul,
+    ol {
+      padding-bottom: 0;
+    }
+
+    p + p,
+    p + ul,
+    p + ol,
+    ul + p,
+    ol + p {
+      padding-top: $global-spacing;
+    }
+
+    footer {
+      font-size: 14px;
+      padding-top: $global-spacing;
+    }
   }
 
-  p {
-    padding-bottom: ($global-spacing * 3);
+  table {
+    width: 100%;
+    table-layout: fixed;
+    margin-bottom: ($global-spacing * 3);
+  }
+
+  th,
+  td {
+    line-height: 24px;
+    text-align: left;
+    padding: $global-spacing 0;
+  }
+
+  th {
+    font-weight: bold;
+    vertical-align: bottom;
+    border-bottom: 2px solid $color-border;
+    padding-right: ($global-spacing / 2);
+
+    & + th {
+      padding-left: ($global-spacing / 2);
+    }
+  }
+
+  td {
+    vertical-align: top;
+    border-top: 1px solid $color-border;
+    padding-right: ($global-spacing / 2);
+
+    & + td {
+      padding-left: ($global-spacing / 2);
+    }
   }
 }
