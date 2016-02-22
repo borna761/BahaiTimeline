@@ -1,0 +1,24 @@
+/*Usage:
+
+Default styles should be mobile first and use these to build on top
+
+.class {
+  @include breakpoint(small) { width: 100%; }
+  @include breakpoint(medium) { width: 125px; }
+  @include breakpoint(large) { width: 150px; }
+}
+*/
+@mixin breakpoint($size) {
+  @if $size == small {
+    @media screen and (min-width: $breakpoint-sm) { @content; }
+  }
+  @else if $size == medium {
+    @media screen and (min-width: $breakpoint-md) { @content; }
+  }
+  @else if $size == large {
+    @media screen and (min-width: $breakpoint-lg) { @content; }
+  }
+  @else {
+    @media screen and (min-width: $size) { @content; }
+  }
+}

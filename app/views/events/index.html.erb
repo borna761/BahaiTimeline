@@ -1,47 +1,44 @@
-<h1>Timeline of Events</h1>
+<main class="site-body">
+  <section class="section-inner">
+  <h1>Timeline of Events</h1>
 
-<table>
-  <thead>
-    <th>
-      <td>Start Date</td>
-      <td>End Date</td>
-      <td>Headline</td>
-      <td>Event Type</td>
-      <td>Edit</td>
-    </th>
-  </thead>
-  <tbody>
-<% @events.each do |event|
+    <%= content_tag :table, id: 'eventsTable', class: 'search-table' do %>
+      <%= content_tag :thead do %>
+        <%= content_tag :th, "Start Date", class: 'skip-filter' %>
+        <%= content_tag :th, "End Date", class: 'skip-filter' %>
+        <%= content_tag :th, "Event", class: 'skip-filter' %>
+        <%= content_tag :th, "Group" %>
+        <%= content_tag :th, "Cycle" %>
+        <%= content_tag :th, "Edit", class: 'skip-filter action' %>
+      <% end %>
+      <%= content_tag :tbody do %>
+        <% cycle = "Cycle 1"
+        @events.each do |event| %>
+        <%
+        if event.eventgroup.group == "Cycles"
+          cycle = event.headline
+        else %>
+          <%= content_tag :tr do %>
+            <%= content_tag :td, formatted_date(event.startYear, event.startMonth, event.startDay) %>
+            <%= content_tag :td, formatted_date(event.endYear, event.endMonth, event.endDay) %>
+            <%= content_tag :td, event.headline %>
+            <%= content_tag :td, event.eventgroup.group %>
+            <%= content_tag :td, cycle %>
+            <%= content_tag :td, link_to("Edit", edit_event_path(event), class: 'btn btn-secondary is-tiny'), class: 'action' %>
+          <% end
+          end %>
+        <% end %>
+      <% end %>
+    <% end %>
 
-  if (event.startDay.to_s == "")
-    if (event.startMonth.to_s == "")
-      eventStartDate = event.startYear.to_s
-    else
-      eventStartDate = Date::MONTHNAMES[event.startMonth] + " " + event.startYear.to_s
-    end
-  else
-    eventStartDate = Date::MONTHNAMES[event.startMonth] + " " + event.startDay.to_s + ", " + event.startYear.to_s
-  end
-
-  if (event.endDay.to_s == "")
-    if (event.endMonth.to_s == "")
-      eventEndDate = event.endYear.to_s
-    else
-      eventEndDate = Date::MONTHNAMES[event.endMonth] + " " + event.endYear.to_s
-    end
-  else
-    eventEndDate = Date::MONTHNAMES[event.endMonth] + " " + event.endDay.to_s + ", " + event.endYear.to_s
-  end
-
-  %>
-  <tr>
-    <td><%= eventStartDate %></td>
-    <td><%= eventEndDate %></td>
-    <td><%= event.headline %></td>
-    <td><%= event.eventgroup.group %></td>
-    <td><%= event.eventtype.eventtype %></td>
-    <td><%= link_to("Edit", edit_event_path(event))%></td>
-  </tr>
-<% end %>
-</tbody>
-</table>
+    <script>
+    $(document).ready(function() {
+      $("#eventsTable").ddTableFilter();
+      $('table.search-table').tableSearch({
+        searchText:'Search Events: ',
+        searchPlaceHolder:'i.e. Heroic'
+      });
+    });
+    </script>
+  </section>
+</main>
