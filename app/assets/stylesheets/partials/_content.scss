@@ -87,15 +87,15 @@
       width: 100%;
     }
 
-    .evenCycle {
+    .oddCycle {
       td {
-        background-color: $color-white-dull;
+        background-color: $color-white-duller;
       }
     }
 
-    .oddCycle {
+    .evenCycle {
       td {
-        background-color: $color-white;
+        background-color: $color-white-dull;
       }
     }
 
