@@ -1,5 +1,7 @@
 .form-search {
+  @extend %site-width;
   padding-bottom: ($global-spacing * 5);
+  margin-top: -($global-spacing * 4);
 }
 
 .form-label,

@@ -100,6 +100,10 @@
     }
 
     &.table-events {
+      @extend %centerBlock;
+      width: 90%;
+      min-width: $site-width;
+
       th,
       td {
         padding-right: $global-spacing;
@@ -120,6 +124,10 @@
 
     &.cell-cycle {
       width: 100px;
+    }
+
+    &.cell-date {
+      width: 170px;
     }
   }
 
