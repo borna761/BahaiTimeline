@@ -87,15 +87,23 @@
       width: 100%;
     }
 
-    & .evenCycle {
+    .evenCycle {
       td {
         background-color: $color-white-dull;
       }
     }
 
-    & .oddCycle {
+    .oddCycle {
       td {
         background-color: $color-white;
+      }
+    }
+
+    &.table-events {
+      th,
+      td {
+        padding-right: $global-spacing;
+        padding-left: $global-spacing;
       }
     }
   }
@@ -105,8 +113,12 @@
     text-align: left;
     padding: $global-spacing 0;
 
-    &.action {
+    &.cell-action {
       text-align: right;
+      width: 50px;
+    }
+
+    &.cell-cycle {
       width: 100px;
     }
   }

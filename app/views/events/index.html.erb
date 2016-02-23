@@ -2,14 +2,14 @@
   <section class="section-inner">
   <h1>Timeline of Events</h1>
 
-    <%= content_tag :table, id: 'eventsTable', class: 'search-table' do %>
+    <%= content_tag :table, id: 'eventsTable', class: 'search-table table-events' do %>
       <%= content_tag :thead do %>
         <%= content_tag :th, "Start Date", class: 'skip-filter' %>
         <%= content_tag :th, "End Date", class: 'skip-filter' %>
         <%= content_tag :th, "Event", class: 'skip-filter' %>
         <%= content_tag :th, "Group" %>
-        <%= content_tag :th, "Cycle" %>
-        <%= content_tag :th, "Edit", class: 'skip-filter action' %>
+        <%= content_tag :th, "Cycle", class: 'cell-cycle' %>
+        <%= content_tag :th, "Edit", class: 'skip-filter cell-action' %>
       <% end %>
       <%= content_tag :tbody do %>
         <% cycle = "Cycle 1"
@@ -28,8 +28,8 @@
             <%= content_tag :td, formatted_date(event.endYear, event.endMonth, event.endDay) %>
             <%= content_tag :td, event.headline.html_safe %>
             <%= content_tag :td, event.eventgroup.group %>
-            <%= content_tag :td, cycle %>
-            <%= content_tag :td, link_to("Edit", edit_event_path(event), class: 'btn btn-secondary is-tiny'), class: 'action' %>
+            <%= content_tag :td, cycle, class: 'cell-cycle' %>
+            <%= content_tag :td, link_to("Edit", edit_event_path(event), class: 'btn btn-secondary is-tiny'), class: 'cell-action' %>
           <% end
           end %>
         <% end %>
