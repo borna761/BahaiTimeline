@@ -19,9 +19,9 @@
           cycle = event.headline
         else %>
         <% if cycle[-1, 1].to_i % 2 == 0
-          cycleClass = "evenRow"
+          cycleClass = "evenCycle"
         else
-          cycleClass = "oddRow"
+          cycleClass = "oddCycle"
         end %>
           <%= content_tag :tr, class: cycleClass do %>
             <%= content_tag :td, formatted_date(event.startYear, event.startMonth, event.startDay) %>
