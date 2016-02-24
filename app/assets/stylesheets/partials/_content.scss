@@ -100,9 +100,10 @@
     }
 
     &.table-events {
-      @extend %centerBlock;
       width: 90%;
+      margin: 0 auto;
       min-width: $site-width;
+      max-width: $breakpoint-lg;
 
       th,
       td {
