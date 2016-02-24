@@ -15,7 +15,8 @@
   &.btn-primary {
     background-color: $color-brand-500;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $color-brand-300;
     }
   }
@@ -23,7 +24,8 @@
   &.btn-secondary {
     background-color: $color-brand-highlight-500;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $color-brand-highlight-300;
     }
   }
