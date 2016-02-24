@@ -12,11 +12,19 @@
   border-radius: $global-radius-sm;
   transition: background-color $global-transition, color $global-transition, border-color $global-transition;
 
-  &.btn-secondary {
+  &.btn-primary {
     background-color: $color-brand-500;
 
     &:hover {
       background-color: $color-brand-300;
+    }
+  }
+
+  &.btn-secondary {
+    background-color: $color-brand-highlight-500;
+
+    &:hover {
+      background-color: $color-brand-highlight-300;
     }
   }
 
@@ -28,5 +36,10 @@
     min-height: 28px;
     padding: 0 $global-spacing;
     margin: 0;
+  }
+
+  .form & {
+    @extend %centerBlock;
+    display: block;
   }
 }

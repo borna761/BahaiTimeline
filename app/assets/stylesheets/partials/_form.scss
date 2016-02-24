@@ -1,22 +1,57 @@
-.form-search {
-  @extend %site-width;
-  padding-bottom: ($global-spacing * 5);
-  margin-top: -($global-spacing * 4);
+.form {
+  font-size: 0;
+}
+
+.form-row {
+  vertical-align: top;
+  display: inline-block;
+  width: 50%;
+  padding: ($global-spacing * 2);
+
+  &.is-fullWidth {
+    width: 100%;
+  }
 }
 
 .form-label,
 .form-field {
-  vertical-align: middle;
-  display: inline-block;
+  display: block;
+  width: 100%;
 }
 
 .form-label {
   font-size: 14px;
-  margin-right: $global-spacing;
+  padding-bottom: $global-spacing;
 }
 
 .form-field {
   font-size: 14px;
   height: 36px;
   padding: 0 $global-spacing;
+  border: 1px solid $color-border;
+}
+
+textarea.form-field {
+  line-height: 24px;
+  height: auto;
+  padding: $global-spacing;
+  resize: vertical;
+}
+
+.form-search {
+  @extend %site-width;
+  padding-bottom: ($global-spacing * 5);
+  margin-top: -($global-spacing * 4);
+
+  .form-label,
+  .form-field {
+    vertical-align: middle;
+    display: inline-block;
+    width: auto;
+  }
+
+  .form-label {
+    padding-bottom: 0;
+    margin-right: $global-spacing;
+  }
 }
