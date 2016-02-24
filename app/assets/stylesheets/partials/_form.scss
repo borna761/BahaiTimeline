@@ -17,11 +17,21 @@
 .form-field {
   display: block;
   width: 100%;
+
+  &.is-inline {
+    vertical-align: middle;
+    display: inline-block;
+    width: auto;
+  }
 }
 
 .form-label {
   font-size: 14px;
   padding-bottom: $global-spacing;
+
+  &.is-inline {
+    padding-bottom: 0;
+  }
 }
 
 .form-field {
@@ -29,6 +39,12 @@
   height: 36px;
   padding: 0 $global-spacing;
   border: 1px solid $color-border;
+
+  &.is-checkbox {
+    height: auto;
+    padding: 0;
+    margin-right: $global-spacing;
+  }
 }
 
 textarea.form-field {
@@ -38,20 +54,99 @@ textarea.form-field {
   resize: vertical;
 }
 
+.form-footer {
+  text-align: center;
+  width: 50%;
+  padding: ($global-spacing * 2);
+  margin: 0 auto;
+
+  a {
+    font-size: 12px;
+    color: $color-brand-300;
+    display: block;
+    padding-bottom: $global-spacing;
+
+    &:hover {
+      color: $color-brand-200;
+    }
+  }
+}
+
 .form-search {
   @extend %site-width;
   padding-bottom: ($global-spacing * 5);
   margin-top: -($global-spacing * 4);
 
-  .form-label,
-  .form-field {
-    vertical-align: middle;
-    display: inline-block;
-    width: auto;
+  .form-label {
+    margin-right: $global-spacing;
+  }
+}
+
+.form-login {
+  .form-row {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.site-message {
+  color: $color-black;
+  text-align: left;
+  padding: ($global-spacing * 2);
+  margin-bottom: ($global-spacing * 2);
+  border: 1px solid darken($color-white-dull, 20);
+  border-radius: $global-radius-sm;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+  background-color: $color-white-dull;
+
+  &:empty {
+    display: none;
   }
 
-  .form-label {
+  h2 {
+    font-size: 16px;
+  }
+
+  ul {
     padding-bottom: 0;
-    margin-right: $global-spacing;
+  }
+
+  li {
+    font-size: 14px;
+  }
+
+  &.is-success {
+    background-color: $color-success;
+    border-color: darken($color-success, 20);
+  }
+
+  &.is-info {
+    background-color: $color-info;
+    border-color: darken($color-info, 20);
+  }
+
+  &.is-warning {
+    color: darken($color-warning, 70);
+    background-color: $color-warning;
+    border-color: darken($color-warning, 20);
+  }
+
+  &.is-danger {
+    background-color: $color-error;
+    border-color: darken($color-error, 20);
+  }
+
+  &.is-toast {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 20;
+  }
+
+  &.is-pinned {
+    position: fixed;
+    top: ($global-spacing * 9);
+    right: 0;
+    z-index: 20;
   }
 }
