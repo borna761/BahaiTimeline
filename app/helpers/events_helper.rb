@@ -11,4 +11,21 @@ module EventsHelper
     end
     return pretty_date
   end
+
+  def slugify(event)
+    event = event.gsub(/^\s+|\s+$/, '').downcase
+
+    fromCharacters = "ãàáäâẽèéëêìíïîõòóöôùúüûñç·/_,:;"
+    toCharacters = "aaaaaeeeeeiiiiooooouuuunc------"
+
+    for i in 0..fromCharacters.length - 1
+      event = event.gsub(fromCharacters[i], toCharacters[i])
+    end
+
+    event = event.gsub(/[^a-z0-9 -]/, '').gsub(/\s+/, '-').gsub(/-+/, '-')
+
+    event = event.gsub(/^([0-9])/,'_$1')
+
+    return event
+  end
 end

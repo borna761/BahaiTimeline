@@ -31,7 +31,8 @@ module TimelineHelper
       \"text\": {
         \"headline\": \"" + cycle.headline + "\",
         \"text\": \"" + cycle.text + "\"
-      }
+      },
+      \"unique_id\": \"" + cycle.headline.parameterize + "\"
     },"
     end
 
@@ -75,8 +76,8 @@ module TimelineHelper
             \"headline\": \"" + event.headline + "\",
             \"text\": \"" + event.text + "\"
           },
-          \"group\": \"" + event.eventgroup.group + "\""
-        timelineJSON += "},"
+          \"group\": \"" + event.eventgroup.group + "\"
+        },"
     end
     timelineJSON = timelineJSON.chomp(',')
 
