@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.where('id > ?', 1).order(startYear: :asc, startMonth: :asc, startDay: :asc, endYear: :desc, endMonth: :desc, endDay: :desc)
+    @events = Event.where('id > ?', 1).order(startYear: :asc, startMonth: :asc, startDay: :asc, background: :desc, endYear: :desc, endMonth: :desc, endDay: :desc)
   end
 
   def edit
