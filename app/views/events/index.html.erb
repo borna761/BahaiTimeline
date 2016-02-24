@@ -10,6 +10,7 @@
       <%= content_tag :th, "Event", class: 'skip-filter' %>
       <%= content_tag :th, "Group" %>
       <%= content_tag :th, "Cycle", class: 'cell-cycle' %>
+      <%= content_tag :th, "View", class: 'skip-filter cell-action' %>
       <%= content_tag :th, "Edit", class: 'skip-filter cell-action' %>
     <% end %>
     <%= content_tag :tbody do %>
@@ -30,6 +31,7 @@
           <%= content_tag :td, event.headline.html_safe %>
           <%= content_tag :td, event.eventgroup.group %>
           <%= content_tag :td, cycle, class: 'cell-cycle' %>
+          <%= content_tag :td, link_to("View", "/#event-" + slugify(event.headline), class: 'btn btn-primary is-tiny'), class: 'action' %>
           <%= content_tag :td, link_to("Edit", edit_event_path(event), class: 'btn btn-secondary is-tiny'), class: 'cell-action' %>
         <% end
         end %>
@@ -38,12 +40,13 @@
   <% end %>
 
   <script>
-  $(document).ready(function() {
-    $("#eventsTable").ddTableFilter();
-    $('table.search-table').tableSearch({
-      searchText:'Search Events: ',
-      searchPlaceHolder:'i.e. Heroic'
+    $(document).ready(function() {
+      $('#eventsTable').ddTableFilter();
+      $('table.search-table').tableSearch({
+        searchText:'Search Events: ',
+        searchPlaceHolder:'i.e. Heroic'
+      });
+      $("#searchTerm").focus();
     });
-  });
   </script>
 </main>
