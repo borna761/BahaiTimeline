@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<p class="site-message is-pinned is-info"><%= notice %></p>
+<p class="site-message is-pinned is-danger"><%= alert %></p>
+
 <%= render 'layouts/header' %>
 
 <%= yield %>
