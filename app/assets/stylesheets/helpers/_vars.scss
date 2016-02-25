@@ -1,18 +1,24 @@
 $site-width: 850px;
 $breakpoint-sm: 640px;
 $breakpoint-md: 900px;
-$breakpoint-lg: 1120px;
+$breakpoint-lg: 1200px;
 
 $color-black: #000;
 $color-white: #fff;
+$color-white-dull: #f0f0f0;
+$color-white-duller: #f9f9f9;
 $color-selection: #bbb;
 $color-brand-100: #B3E5FC;
 $color-brand-200: #81D4FA;
 $color-brand-300: #4FC3F7;
 $color-brand-400: #29B6F6;
 $color-brand-500: #03A9F4;
+$color-brand-highlight-300: #81C784;
+$color-brand-highlight-500: #4CAF50;
 $color-content: #333;
 $color-input: $color-content;
+$color-info: $color-brand-highlight-300;
+$color-warning: #fcf8e3;
 $color-error: #ff9494;
 $color-success: #39cccc;
 $color-border: #ddd;

@@ -86,6 +86,31 @@
       font-weight: normal;
       width: 100%;
     }
+
+    .oddCycle {
+      td {
+        background-color: $color-white;
+      }
+    }
+
+    .evenCycle {
+      td {
+        background-color: $color-white-dull;
+      }
+    }
+
+    &.table-events {
+      width: 90%;
+      margin: 0 auto;
+      min-width: $site-width;
+      max-width: $breakpoint-lg;
+
+      th,
+      td {
+        padding-right: $global-spacing;
+        padding-left: $global-spacing;
+      }
+    }
   }
 
   th,
@@ -93,9 +118,17 @@
     text-align: left;
     padding: $global-spacing 0;
 
-    &.action {
+    &.cell-action {
       text-align: right;
+      width: 50px;
+    }
+
+    &.cell-cycle {
       width: 100px;
+    }
+
+    &.cell-date {
+      width: 170px;
     }
   }
 

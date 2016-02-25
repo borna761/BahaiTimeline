@@ -1,37 +1,49 @@
 <main class="site-body">
   <section class="section-inner">
-  <h1>Timeline of Events</h1>
+    <h1>Timeline of Events</h1>
+  </section>
 
-    <%= content_tag :table, id: 'eventsTable', class: 'search-table' do %>
-      <%= content_tag :thead do %>
-        <%= content_tag :th, "Start Date", class: 'skip-filter' %>
-        <%= content_tag :th, "End Date", class: 'skip-filter' %>
-        <%= content_tag :th, "Event", class: 'skip-filter' %>
-        <%= content_tag :th, "Group" %>
-        <%= content_tag :th, "Cycle" %>
-        <%= content_tag :th, "Edit", class: 'skip-filter action' %>
-      <% end %>
-      <%= content_tag :tbody do %>
-        <% cycle = "Cycle 1"
-        @events.each do |event| %>
-        <%
-        if event.eventgroup.group == "Cycles"
-          cycle = event.headline
-        else %>
-          <%= content_tag :tr do %>
-            <%= content_tag :td, formatted_date(event.startYear, event.startMonth, event.startDay) %>
-            <%= content_tag :td, formatted_date(event.endYear, event.endMonth, event.endDay) %>
-            <%= content_tag :td, event.headline.html_safe %>
-            <%= content_tag :td, event.eventgroup.group %>
-            <%= content_tag :td, cycle %>
-            <%= content_tag :td, link_to("Edit", edit_event_path(event), class: 'btn btn-secondary is-tiny'), class: 'action' %>
-          <% end
-          end %>
-        <% end %>
+  <%= content_tag :table, id: 'eventsTable', class: 'search-table table-events' do %>
+    <%= content_tag :thead do %>
+      <%= content_tag :th, "Start Date", class: 'skip-filter cell-date' %>
+      <%= content_tag :th, "End Date", class: 'skip-filter cell-date' %>
+      <%= content_tag :th, "Event", class: 'skip-filter' %>
+      <%= content_tag :th, "Group" %>
+      <%= content_tag :th, "Cycle", class: 'cell-cycle' %>
+      <%= content_tag :th, "View", class: 'skip-filter cell-action' %>
+      <% if admin_signed_in? %>
+        <%= content_tag :th, "Edit", class: 'skip-filter cell-action' %>
       <% end %>
     <% end %>
+    <%= content_tag :tbody do %>
+      <% cycle = "Cycle 1"
+      @events.each do |event| %>
+      <%
+      if event.eventgroup.group == "Cycles"
+        cycle = event.headline
+      else %>
+      <% if cycle[-1, 1].to_i % 2 == 0
+        cycleClass = "evenCycle"
+      else
+        cycleClass = "oddCycle"
+      end %>
+        <%= content_tag :tr, class: cycleClass do %>
+          <%= content_tag :td, formatted_date(event.startYear, event.startMonth, event.startDay), class: 'cell-date' %>
+          <%= content_tag :td, formatted_date(event.endYear, event.endMonth, event.endDay), class: 'cell-date' %>
+          <%= content_tag :td, event.headline.html_safe %>
+          <%= content_tag :td, event.eventgroup.group, class: event.eventgroup.group.parameterize %>
+          <%= content_tag :td, cycle, class: 'cell-cycle' %>
+          <%= content_tag :td, link_to("View", "/#event-" + slugify(event.headline), class: 'btn btn-primary is-tiny'), class: 'action' %>
+          <% if admin_signed_in? %>
+            <%= content_tag :td, link_to("Edit", edit_event_path(event), class: 'btn btn-secondary is-tiny'), class: 'cell-action' %>
+          <% end %>
+        <% end
+        end %>
+      <% end %>
+    <% end %>
+  <% end %>
 
-    <script>
+  <script>
     $(document).ready(function() {
       $('#eventsTable').ddTableFilter();
       $('table.search-table').tableSearch({
@@ -40,6 +52,5 @@
       });
       $("#searchTerm").focus();
     });
-    </script>
-  </section>
+  </script>
 </main>

@@ -6,6 +6,11 @@
       <%= nav_link("Events", events_path, '', '') %>
       <%= nav_link("The Bahá’í Calendar", calendar_path, '', '') %>
       <%= nav_link("About", about_path, '', '') %>
+      <% if admin_signed_in? %>
+        <li>
+        <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
+        </li>
+      <% end %>
     </ul>
   </nav>
 </header>
