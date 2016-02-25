@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  if Rails.env.production?
+    devise_for :admins, :controllers => { :registrations => "registrations" }
+  else
+    devise_for :admins
+  end
   resources :event_groups
   resources :event_types
 
