@@ -31,7 +31,7 @@
           <%= content_tag :td, formatted_date(event.startYear, event.startMonth, event.startDay), class: 'cell-date' %>
           <%= content_tag :td, formatted_date(event.endYear, event.endMonth, event.endDay), class: 'cell-date' %>
           <%= content_tag :td, event.headline.html_safe %>
-          <%= content_tag :td, event.eventgroup.group %>
+          <%= content_tag :td, event.eventgroup.group, class: event.eventgroup.group.parameterize %>
           <%= content_tag :td, cycle, class: 'cell-cycle' %>
           <%= content_tag :td, link_to("View", "/#event-" + slugify(event.headline), class: 'btn btn-primary is-tiny'), class: 'action' %>
           <% if admin_signed_in? %>
