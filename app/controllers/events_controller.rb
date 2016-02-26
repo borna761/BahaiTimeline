@@ -20,12 +20,18 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = Event.new
+    if admin_signed_in?
+      @event = Event.new
+    else
+      redirect_to events_path
+    end
   end
 
   def create
-    @event = Event.new(event_params)
-    @event.save
+    if admin_signed_in?
+      @event = Event.new(event_params)
+      @event.save
+    end
     redirect_to events_path
   end
 
