@@ -26,21 +26,12 @@
       left: 0;
 
       a {
-        width: 40px;
-        height: 40px;
+        width: 240px;
         overflow: hidden;
         padding: 0;
-        border-radius: 100%;
-        background-color: $color-white;
-        box-shadow: 0 1px 2px 0 $color-brand-500;
-        transition: box-shadow $global-transition;
 
         &:after {
           display: none;
-        }
-
-        &:hover {
-          box-shadow: 0 1px 2px 0 rgba(0,0,0,0.4);
         }
       }
     }
