@@ -1,7 +1,7 @@
 <header class="site-header">
   <nav class="site-nav">
     <ul>
-      <li class="logo"><a href="<%= root_path %>"><img src='http://placehold.it/32x32'></a></li>
+      <li class="logo"><a href="<%= root_path %>"><img src='<%= asset_path('timeline-logo.svg') %>'></a></li>
       <%= nav_link("Home", root_path, '', '') %>
       <%= nav_link("Events", events_path, '', '') %>
       <%= nav_link("The Bahá’í Calendar", calendar_path, '', '') %>
