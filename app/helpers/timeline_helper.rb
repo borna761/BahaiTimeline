@@ -61,14 +61,14 @@ module TimelineHelper
           timelineJSON += "},"
           unless (event.endYear.to_s == "")
             timelineJSON += "\"end_date\": {
-              \"year\": \"" + event.endYear.to_s + "\""
+              \"year\": \"" + (event.endYear == 0 ? Date.current.year.to_s : event.endYear.to_s) + "\""
             unless (event.endMonth.to_s == "")
               timelineJSON += ",
-              \"month\": \"" + event.endMonth.to_s + "\""
+              \"month\": \"" + (event.endMonth == 0 ? Date.current.month.to_s : event.endMonth.to_s) + "\""
             end
             unless (event.endDay.to_s == "")
               timelineJSON += ",
-              \"day\": \"" + event.endDay.to_s + "\""
+              \"day\": \"" + (event.endDay == 0 ? Date.current.day.to_s : event.endDay.to_s) + "\""
             end
           timelineJSON += "},"
         end

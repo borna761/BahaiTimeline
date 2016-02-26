@@ -14,9 +14,30 @@ class EventsController < ApplicationController
   def update
     if admin_signed_in?
       @event = Event.find(params[:id])
-      event_params = params.require(:event).permit(:startYear, :startMonth, :startDay, :endYear, :endMonth, :endDay, :headline, :text, :media, :mediaCredit, :mediaCaption)
       @event.update(event_params)
     end
     redirect_to events_path
+  end
+
+  def new
+    if admin_signed_in?
+      @event = Event.new
+    else
+      redirect_to events_path
+    end
+  end
+
+  def create
+    if admin_signed_in?
+      @event = Event.new(event_params)
+      @event.save
+    end
+    redirect_to events_path
+  end
+
+  private
+
+  def event_params
+    params.require(:event).permit(:startYear, :startMonth, :startDay, :endYear, :endMonth, :endDay, :headline, :eventtype_id, :eventgroup_id, :text, :media, :mediaCredit, :mediaCaption)
   end
 end
