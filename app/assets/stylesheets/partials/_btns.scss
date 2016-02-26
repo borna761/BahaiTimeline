@@ -2,6 +2,7 @@
   font-size: 16px;
   line-height: 36px;
   color: #fff;
+  text-align: center;
   vertical-align: middle;
   display: inline-block;
   min-width: 200px;
@@ -38,6 +39,11 @@
     min-height: 28px;
     padding: 0 $global-spacing;
     margin: 0;
+  }
+
+  &.btn-new_event {
+    margin: -5px 0 0;
+    float: right;
   }
 
   .form & {
