@@ -1,5 +1,8 @@
 <main class="site-body">
   <section class="section-inner">
+    <% if admin_signed_in? %>
+      <%= link_to("New event", new_event_path, class: 'btn btn-secondary btn-new_event') %>
+    <% end %>
     <h1>Timeline of Events</h1>
   </section>
 
@@ -41,10 +44,6 @@
         end %>
       <% end %>
     <% end %>
-  <% end %>
-
-  <% if admin_signed_in? %>
-    <%= link_to("New event", new_event_path, class: 'btn btn-secondary is-tiny') %>
   <% end %>
 
   <script>
