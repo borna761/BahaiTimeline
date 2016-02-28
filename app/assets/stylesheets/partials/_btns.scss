@@ -51,3 +51,71 @@
     display: block;
   }
 }
+
+.btn_toggle-nav {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  position: absolute;
+  top: 50%;
+  right: $global-spacing;
+  border: 0;
+  background-color: transparent;
+
+  span,
+  span:before,
+  span:after {
+    display: block;
+    width: 26px;
+    height: 1px;
+    padding: 0;
+    margin-left: -13px;
+    position: absolute;
+    left: 50%;
+    background: $color-white;
+  }
+
+  span {
+    margin-top: -1px;
+    top: 50%;
+    transition: background $global-transition;
+
+    &:before,
+    &:after {
+      content: '';
+      transition: transform $global-transition;
+    }
+
+    &:before {
+      top: -5px;
+    }
+
+    &:after {
+      bottom: -5px;
+    }
+  }
+
+  .has-nav & {
+    span {
+      background-color: transparent;
+
+      &:before,
+      &:after {
+        top: 0;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  @include breakpoint(medium) {
+    display: none;
+  }
+}
