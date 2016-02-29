@@ -17,3 +17,12 @@
 //= require ddtf
 //= require html-table-search
 //= require_tree .
+
+$(document).on('ready page:load', function () {
+  $('.js-toggle-nav').click(function() {
+    $('html').toggleClass('show-site-nav');
+  });
+  $('.site-nav a').click(function() {
+    $('html').removeClass('show-site-nav');
+  });
+});
