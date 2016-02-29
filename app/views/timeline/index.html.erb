@@ -1,12 +1,11 @@
-  <div id='timeline-embed' style="height: calc(100% - 64px);"></div>
+<div id='timeline-embed' style="height: calc(100% - 64px);"></div>
 
-  <script type="text/javascript">
+<script type="text/javascript">
   var options = {
-  language: 'en',
-  initial_zoom: 0,
-  timenav_height_percentage: 30,
-  hash_bookmark: true
-}
-
-    timeline = new TL.Timeline('timeline-embed', <%= create_timeline.html_safe %>, options);
-  </script>
+    language: 'en',
+    initial_zoom: 0,
+    timenav_height_percentage: 30,
+    hash_bookmark: true
+  }
+  timeline = new TL.Timeline('timeline-embed', <%= raw render template: 'timeline/index.json' %>, options);
+</script>
