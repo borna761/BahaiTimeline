@@ -72,13 +72,27 @@ textarea.form-field {
   }
 }
 
-.form-search {
+.form-search,
+.form-filter {
   @extend %site-width;
   padding-bottom: ($global-spacing * 5);
   margin-top: -($global-spacing * 4);
 
   .form-label {
+    width: 100px;
     margin-right: $global-spacing;
+    margin-bottom: $global-spacing;
+  }
+
+  .form-field {
+    width: 200px;
+    margin-bottom: $global-spacing;
+  }
+}
+
+.form-filter {
+  @include breakpoint(850px) {
+    display: none;
   }
 }
 

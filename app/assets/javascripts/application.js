@@ -18,6 +18,8 @@
 //= require html-table-search
 //= require_tree .
 
+var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
 $(document).on('ready page:load', function () {
   $('.js-toggle-nav').click(function() {
     $('html').toggleClass('show-site-nav');
@@ -25,4 +27,11 @@ $(document).on('ready page:load', function () {
   $('.site-nav a').click(function() {
     $('html').removeClass('show-site-nav');
   });
+  var formFilter = $('.form-filter');
+  var labelGroup = $('<br><label class="form-label is-inline">Group</label>')
+  var labelCycle = $('<br><label class="form-label is-inline">Cycle</label>')
+  formFilter.append(labelGroup)
+  $('.js-filter_group').clone(true,true).addClass('form-field is-inline').appendTo(formFilter);
+  formFilter.append(labelCycle)
+  $('.js-filter_cycle').clone(true,true).addClass('form-field is-inline').appendTo(formFilter);
 });
