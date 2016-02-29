@@ -78,8 +78,8 @@
   }
 
   table {
-    width: 100%;
     table-layout: fixed;
+    width: 100%;
     margin-bottom: ($global-spacing * 3);
 
     select {
@@ -100,9 +100,8 @@
     }
 
     &.table-events {
-      width: 90%;
+      width: 97%;
       margin: 0 auto;
-      min-width: $site-width;
       max-width: $breakpoint-lg;
 
       th,
@@ -113,37 +112,103 @@
     }
   }
 
-  th,
-  td {
-    text-align: left;
-    padding: $global-spacing 0;
-
-    &.cell-action {
-      text-align: right;
-      width: 50px;
-    }
-
-    &.cell-cycle {
-      width: 100px;
-    }
-
-    &.cell-date {
-      width: 170px;
-    }
-  }
-
   th {
     font-weight: bold;
     vertical-align: bottom;
+    display: none;
     border-bottom: 2px solid $color-border;
     padding-right: ($global-spacing / 2);
     padding-left: ($global-spacing / 2);
   }
 
   td {
+    text-align: left;
     vertical-align: top;
-    border-top: 1px solid $color-border;
-    padding-right: ($global-spacing / 2);
-    padding-left: ($global-spacing / 2);
+    display: block;
+    padding: 0 ($global-spacing / 2) $global-spacing;
+
+    &:before {
+      display: inline-block;
+      width: 100px;
+    }
+
+    &:nth-child(1) {
+      &:before {
+        content: 'Start Date:';
+      }
+    }
+
+    &:nth-child(2) {
+      &:before {
+        content: 'End Date:';
+      }
+    }
+
+    &:nth-child(3) {
+      &:before {
+        content: 'Event:';
+      }
+    }
+
+    &:nth-child(4) {
+      &:before {
+        content: 'Group:';
+      }
+    }
+
+    &:nth-child(5) {
+      &:before {
+        content: 'Cycle:';
+      }
+    }
+
+    &:nth-child(6),
+    &:nth-child(7) {
+      &:before {
+        content: '';
+      }
+    }
+
+    &:first-child {
+      border-top: 1px solid $color-border;
+    }
+  }
+
+  @include breakpoint(850px) {
+    table {
+      &.table-events {
+        width: 90%;
+      }
+    }
+
+    th,
+    td {
+      text-align: left;
+      display: table-cell;
+      padding: $global-spacing 0;
+
+      &.cell-action {
+        text-align: right;
+        width: 50px;
+      }
+
+      &.cell-cycle {
+        width: 100px;
+      }
+
+      &.cell-date {
+        width: 170px;
+      }
+    }
+
+    td {
+      padding-right: ($global-spacing / 2);
+      padding-left: ($global-spacing / 2);
+      border-top: 1px solid $color-border;
+
+      &:before {
+        display: none;
+      }
+    }
   }
 }
