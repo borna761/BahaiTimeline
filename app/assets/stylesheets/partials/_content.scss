@@ -130,14 +130,13 @@
     text-align: left;
     vertical-align: top;
     display: block;
-    padding: 0 ($global-spacing / 2) $global-spacing ($global-spacing * 13);
+    padding: 0 ($global-spacing / 2) $global-spacing ($global-spacing * 14);
 
     &:before {
       content: "" attr(data-col-name) ":";
       font-weight: bold;
       display: inline-block;
-      margin-right: $global-spacing;
-      margin-left: -($global-spacing * 12);
+      margin-left: -($global-spacing * 13);
     }
 
     &:first-child {
