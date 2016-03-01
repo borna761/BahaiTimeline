@@ -30,7 +30,7 @@
 				});
 			});
 		});
-		tableObj.before(divObj.append(inputObj));
+		$('.form-filter').before(divObj.append(inputObj));
 		return tableObj;
 	}
 }(jQuery));
