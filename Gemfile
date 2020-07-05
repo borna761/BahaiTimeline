@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'ruby', '2.6.2'
-
 gem 'pg'
 
 gem 'rails_12factor'
